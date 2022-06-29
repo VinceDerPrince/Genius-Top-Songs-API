@@ -25,4 +25,6 @@ def charts_of_the_day() -> List[List]:
     charts = [{"placement":i+1,"title":titles[i],"artist":artists[i],"streams":streams[i]} for i in range(len(titles))]
     return charts
 
-print(charts_of_the_day())
+def specific_chart(num: int) -> Dict:
+    charts = charts_of_the_day()
+    return charts[num-1]
