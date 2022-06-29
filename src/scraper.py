@@ -1,4 +1,4 @@
-from typing import List
+from typing import Dict, List
 import requests as _requests
 import bs4 as _bs4
 
@@ -22,7 +22,7 @@ def charts_of_the_day() -> List[List]:
     raw_streams = page.find_all(class_="IconWithLabel__Container-sc-141ao6c-0 hliVmp")
     streams = [stream.text for stream in raw_streams]
 
-    charts = [[i+1,titles[i],artists[i],streams[i]] for i in range(len(titles))]
+    charts = [{"placement":i+1,"title":titles[i],"artist":artists[i],"streams":streams[i]} for i in range(len(titles))]
     return charts
 
 print(charts_of_the_day())
