@@ -7,6 +7,8 @@ def _get_page_url(url: str) -> _bs4.BeautifulSoup:
     soup = _bs4.BeautifulSoup(page.content, "html.parser")
     return soup
 
+
+
 def charts_of_the_day() -> List[List]:
     '''
     Return charts of the current day
